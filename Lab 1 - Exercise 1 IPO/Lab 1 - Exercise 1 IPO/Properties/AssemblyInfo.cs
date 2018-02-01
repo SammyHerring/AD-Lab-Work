@@ -1,4 +1,10 @@
-﻿using System.Reflection;
+﻿//Project Name: Lab 1 - Exercise 1 IPO | File Name: AssemblyInfo.cs
+//Author Name: Samuel Steven David Herring
+//Author URI: http://sherring.me
+//UserID: sh1042
+//Created On: 31/1/2018 | 14:38
+//Last Updated On:  1/2/2018 | 20:01
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

@@ -1,4 +1,10 @@
-﻿using System.Reflection;
+﻿//Project Name: Lab 1 - Exercise 5 String Methods | File Name: AssemblyInfo.cs
+//Author Name: Samuel Steven David Herring
+//Author URI: http://sherring.me
+//UserID: sh1042
+//Created On: 31/1/2018 | 18:25
+//Last Updated On:  1/2/2018 | 20:00
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

@@ -3,14 +3,14 @@
 //Author URI: http://sherring.me
 //UserID: sh1042
 //Created On: 1/2/2018 | 14:00
-//Last Updated On:  1/2/2018 | 14:08
+//Last Updated On:  1/2/2018 | 19:56
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_1___Exercise_2_Selection
+namespace Lab_1___Exercise_3_Conditions
 {
     class Program
     {

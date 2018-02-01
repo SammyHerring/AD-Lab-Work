@@ -1,16 +1,16 @@
-﻿//Project Name: Lab 1 - Exercise 4 While | File Name: Program.cs
+﻿//Project Name: Lab 1 - Exercise 4 While | File Name: CodeFile1.cs
 //Author Name: Samuel Steven David Herring
 //Author URI: http://sherring.me
 //UserID: sh1042
-//Created On: 1/2/2018 | 14:10
-//Last Updated On:  1/2/2018 | 19:49
+//Created On: 1/2/2018 | 18:52
+//Last Updated On:  1/2/2018 | 18:55
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_1___Exercise_4_While
+namespace Lab_1___Exercise_2_Selection
 {
     class Program
     {
@@ -26,11 +26,16 @@ namespace Lab_1___Exercise_4_While
 
             Console.WriteLine("Retail POS System");
 
-            systemModeSelection(ref modeSelected, ref mode, ref systemRunning);
+            systemModeSelector(ref modeSelected, ref systemRunning, ref mode, ref iterationNo, ref totalRetailCost, ref totalTradeCost, ref totalProductQuantity, ref totalProfitValue);
 
             while (systemRunning)
             {
-                iterationNo += 1;
+                if (!modeSelected)
+                {
+                    systemModeSelector(ref modeSelected, ref systemRunning, ref mode, ref iterationNo, ref totalRetailCost, ref totalTradeCost, ref totalProductQuantity, ref totalProfitValue);
+                }
+
+                iterationNo = +1;
 
                 Console.WriteLine("\n--Product Listing--");
                 Console.WriteLine(" - (L)aptop");
@@ -65,7 +70,6 @@ namespace Lab_1___Exercise_4_While
                             productSelected = true;
                             break;
                         default:
-                            productSelected = false;
                             break;
                     }
                 }
@@ -78,34 +82,22 @@ namespace Lab_1___Exercise_4_While
 
                 profitValue = productQuantity * (retailCost - (tradeCost * (1 + vatValue)));
 
-                totalRetailCost += retailCost;
-                totalTradeCost += tradeCost;
-                totalProductQuantity += productQuantity;
-                totalProfitValue += profitValue;
+                totalRetailCost = +retailCost;
+                totalTradeCost = +tradeCost;
+                totalProductQuantity = +productQuantity;
+                totalProfitValue = +profitValue;
 
-                Console.Write("\nData Set: {0}", iterationNo);
+                Console.WriteLine("Data Set: {0}", iterationNo);
                 Console.WriteLine("\nRetail Cost: {0}; Trade Cost: {1}; Product Quantity: {2}; Profit: {3};", retailCost, tradeCost, productQuantity, profitValue);
                 Console.ReadLine();
 
-                systemModeCleanup(ref modeSelected, ref productSelected, ref systemRunning);
-                systemModeSelection(ref modeSelected, ref mode, ref systemRunning);
+                systemCleanup(ref modeSelected, ref productSelected, ref systemRunning);
             }
-
-            Console.WriteLine("\nTotal No of Data Sets: {0}", iterationNo);
-            Console.WriteLine("\nTotal Retail Cost: {0}; Total Trade Cost: {1}; Total Product Quantity: {2}; Total Profit: {3};", totalRetailCost, totalTradeCost, totalProductQuantity, totalProfitValue);
-            Console.WriteLine("\n--System End--");
-            Console.ReadLine();
-
+            systemCleanup(ref modeSelected, ref productSelected, ref systemRunning);
+            systemModeSelector(ref modeSelected, ref systemRunning, ref mode, ref iterationNo, ref totalRetailCost, ref totalTradeCost, ref totalProductQuantity, ref totalProfitValue);
         }
 
-        static void systemModeCleanup(ref bool modeSelected, ref bool productSelected, ref bool systemRunning)
-        {
-            productSelected = false;
-            systemRunning = false;
-            modeSelected = false;
-        }
-
-        static void systemModeSelection(ref bool modeSelected, ref string mode, ref bool systemRunning)
+        static void systemModeSelector(ref bool modeSelected, ref bool systemRunning, ref string mode, ref int iterationNo, ref decimal totalRetailCost, ref decimal totalTradeCost, ref int totalProductQuantity, ref decimal totalProfitValue)
         {
             while (!modeSelected)
             {
@@ -115,19 +107,36 @@ namespace Lab_1___Exercise_4_While
                 switch (mode.ToLower())
                 {
                     case "s":
-                        modeSelected = true;
+                        Console.WriteLine("\n--Sales Mode--");
                         systemRunning = true;
+                        modeSelected = true;
                         break;
                     case "e":
-                        modeSelected = true;
+                        Console.WriteLine("\n--End of Day--");
                         systemRunning = false;
+                        modeSelected = true;
+                        dataCollation(ref systemRunning, ref iterationNo, ref totalRetailCost, ref totalTradeCost, ref totalProductQuantity, ref totalProfitValue);
                         break;
                     default:
-                        modeSelected = false;
-                        systemRunning = false;
                         break;
                 }
             }
+        }
+
+        static void dataCollation(ref bool systemRunning, ref int iterationNo, ref decimal totalRetailCost, ref decimal totalTradeCost, ref int totalProductQuantity, ref decimal totalProfitValue)
+        {
+            Console.WriteLine("\nNumber of Data Sets: {0}", iterationNo);
+            Console.WriteLine("\nTotal Retail Cost: {0}; Total Trade Cost: {1}; Total Product Quantity: {2}; Total Profit: {3};", totalRetailCost, totalTradeCost, totalProductQuantity, totalProfitValue);
+            Console.WriteLine("\n--System End--");
+            systemRunning = false;
+            Console.ReadLine();
+        }
+
+        static void systemCleanup(ref bool modeSelected, ref bool productSelected, ref bool systemRunning)
+        {
+            modeSelected = false;
+            productSelected = false;
+            systemRunning = false;
         }
 
         static int integerParsedReturn(string query)

@@ -3,7 +3,7 @@
 //Author URI: http://sherring.me
 //UserID: sh1042
 //Created On: 31/1/2018 | 18:25
-//Last Updated On:  1/2/2018 | 20:00
+//Last Updated On:  1/2/2018 | 22:26
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,6 +70,11 @@ namespace Lab_1___Exercise_5_String_Methods
                     }
                 }
                 productQuantity = integerParsedReturn("Enter number of products required: ");
+
+                if (boolQuery("Generate Invoice"))
+                {
+                    Console.WriteLine("Generating.. lol");
+                }
 
                 if (productQuantity > discountQuantity)
                 {
@@ -169,6 +174,23 @@ namespace Lab_1___Exercise_5_String_Methods
             {
                 Console.WriteLine("{0}: Overflow", value);
                 return decimalParsedReturn(query);
+            }
+        }
+
+        static bool boolQuery(string query)
+        {
+            Console.Write("{0 (y/n)?", query);
+            string value = Console.ReadLine().ToLower();
+            if (value == "yes")
+            {
+                return true;
+            } else if (value == "no")
+            {
+                return false;
+            }
+            else
+            {
+                return boolQuery(query);
             }
         }
     }

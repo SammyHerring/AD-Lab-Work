@@ -11,45 +11,43 @@ namespace ZooCalcPlus
         {
             int numAdults = 0;
             int numChildren = 0;
-            int numSeniors == 0;
-            int totalPrice = 0
-            int rawPrice = 0    ;
-            nit totalTicketNumbers = 0;
-            int groupTicketPrice;
-            int rateCard;
+            int numSeniors = 0;
+            int totalPrice = 0;
+            int rawPrice = 0;
+            int totalTicketNumbers = 0;
+            int groupTicketPrice = 0;
                      
 
             Console.WriteLine("Enter number of Adults");
-            numAdults = int.ToInt32(Console.ReadLine());
+            numAdults = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Enter number of Children");
-            numChildren = Convert.toInt32(Console.ReadLine());
+            numChildren = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Enter nimber of Seniors");
-            nimSeniors = int.Parse((Console.ReadLine(),2);
+            numSeniors = int.Parse(Console.ReadLine());
 
-            totalTicketNumbers = (numAdults + numChildren + nimSeniors;
+            totalTicketNumbers = (numAdults + numChildren + numSeniors);
 
 
-            if totalTicketNumbers => 5
+            if (totalTicketNumbers >= 5)
             {
                 //Sell group ticket
                 Console.WriteLine("Selling group ticket at £9 per person");
-                totalPrice = groupTicketPrice x totalTicketNumbers;
+                totalPrice = groupTicketPrice * totalTicketNumbers;
             }
             else
             {
-                rawPrice + 1490 * numAdults + 1090 * numChildren + 990 * numSeniors;
-                if (rawPrice > 3990);
+                rawPrice = rawPrice + 1490 * numAdults + 1090 * numChildren + 990 * numSeniors;
+                if (rawPrice > 3990)
                 {
                     //Sell pass ticket
-                    Console.WriteLine('Selling Pass Ticket for £39-90');
+                    Console.WriteLine("Selling Pass Ticket for £39-90");
                     totalPrice = 3990;
-                }
-                else
+                } else
                 {
                     Console.WriteLine("Selling Individual Tickets");
-                    totalPrice = rawPrice
+                    totalPrice = rawPrice;
                 }
             }
 

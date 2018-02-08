@@ -15,7 +15,7 @@ namespace ZooCalcPlus
             int totalPrice = 0;
             int rawPrice = 0;
             int totalTicketNumbers = 0;
-            int groupTicketPrice = 0;
+            int groupTicketPrice = 9;
                      
 
             Console.WriteLine("Enter number of Adults");

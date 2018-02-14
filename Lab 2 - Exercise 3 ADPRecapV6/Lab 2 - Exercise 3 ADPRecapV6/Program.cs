@@ -10,7 +10,12 @@ namespace APDRecapV6
     {
         static void Main(string[] args)
         {
-            //Task 2
+            /*
+            //Testing
+            //Black Box Testing
+            //Equivalence Partitions --> when valid is 1-10 --> P1: 0 (Boundary Check) / P2: 1-10 / P3: 11-99 (Boundary Check) / P4: 100
+            //-1-->0 // 1,2,3 // 4-->1000 // int vs char
+            */
             string[] items = { "Laptop", "Desktop", "Printer" };
             decimal[] retail_prices = { 499m, 399m, 99m };
             decimal[] trade_prices = { 299m, 289m, 65m };

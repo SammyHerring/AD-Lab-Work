@@ -3,7 +3,7 @@
 //Author URI: http://sherring.me
 //UserID: sh1042
 //Created On: 22/2/2018 | 14:28
-//Last Updated On:  22/2/2018 | 14:29
+//Last Updated On:  22/2/2018 | 14:58
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,6 +94,7 @@ namespace Lab_5___Exercise_3_Arr_Methods
             }
 
             time = highTides[0, 0];
+
             //displayTime(time)
 
             //for each location
@@ -103,19 +104,17 @@ namespace Lab_5___Exercise_3_Arr_Methods
             //end of tide loop
             //end of location loop
 
+            for (int tideIndex = 1; tideIndex < 7; tideIndex++)
+            {
+                for (int locIndex = 0; locIndex < 4; locIndex++)
+                {
+                    Console.WriteLine("Tide Index: {0}; Location: {1}; Tide Time: {2}",tideIndex, places[locIndex], displayTimeReturn(highTides[locIndex, tideIndex]));
+                }
+            }
+
 
             Console.WriteLine("Press Enter to finish");
             Console.ReadLine();
-
-
-
-
-            //
-
-
-
-
-
         }
 
 
@@ -127,6 +126,16 @@ namespace Lab_5___Exercise_3_Arr_Methods
             hours = Math.Truncate(time);
             minutes = Math.Truncate((time - hours) * 60);
             Console.WriteLine(hours.ToString() + ":" + minutes.ToString());
+        }
+
+         static string displayTimeReturn(double time)
+        {
+            double hours;
+            double minutes;
+
+            hours = Math.Truncate(time);
+            minutes = Math.Truncate((time - hours) * 60);
+            return (hours.ToString() + ":" + minutes.ToString());
         }
 
     }

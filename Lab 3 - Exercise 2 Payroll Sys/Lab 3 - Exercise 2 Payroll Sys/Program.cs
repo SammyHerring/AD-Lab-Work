@@ -3,7 +3,7 @@
 //Author URI: http://sherring.me
 //UserID: sh1042
 //Created On: 15/2/2018 | 15:08
-//Last Updated On:  15/2/2018 | 15:19
+//Last Updated On:  16/2/2018 | 11:05
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -125,6 +125,14 @@ namespace Lab_3___Exercise_2_Payroll_Sys
             totalPay = monthTotalHours * 8.00M;
 
             //AllOutput Test - added by SSDH
+            
+            //for (int i = 0; i <= hoursWorked.Length; i++)
+            //{
+            //    for (int y = 0; y <= hoursWorked.Length(); y++)
+            //    {
+            //        Console.WriteLine(hoursWorked[i, y]);
+            //    }
+            //}
 
             // Wait for enter keypress to finish.
             Console.WriteLine("Press Enter to finish program.");

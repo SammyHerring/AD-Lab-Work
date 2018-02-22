@@ -1,4 +1,10 @@
-﻿using System;
+﻿//Project Name: Lab 5 - Exercise 2 Array Srch | File Name: Program.cs
+//Author Name: Samuel Steven David Herring
+//Author URI: http://sherring.me
+//UserID: sh1042
+//Created On: 22/2/2018 | 14:05
+//Last Updated On:  22/2/2018 | 14:29
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -3,7 +3,7 @@
 //Author URI: http://sherring.me
 //UserID: sh1042
 //Created On: 22/2/2018 | 13:26
-//Last Updated On:  22/2/2018 | 13:49
+//Last Updated On:  22/2/2018 | 14:02
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -203,11 +203,11 @@ namespace Lab_5___Exercise_1_Zoo_Calc_AV
             Console.WriteLine();
             Console.WriteLine("Days Figures");
             Console.WriteLine("Total Takings: £" + totalIncome.ToString());
-            Console.WriteLine("Num Adult Tickets:  " + "");
-            Console.WriteLine("Num Child Tickets:  " + "");
-            Console.WriteLine("Num Senior Tickets: " + "");
-            Console.WriteLine("Num Pass Tickets:   " + "");
-            Console.WriteLine("Num Group Tickets:  " + "");
+            Console.WriteLine("Num Adult Tickets:  " + ticketsSold[ADULT]);
+            Console.WriteLine("Num Child Tickets:  " + ticketsSold[CHILD]);
+            Console.WriteLine("Num Senior Tickets: " + ticketsSold[SENIOR]);
+            Console.WriteLine("Num Pass Tickets:   " + ticketsSold[PASS]);
+            Console.WriteLine("Num Group Tickets:  " + ticketsSold[GROUP]);
 
             Console.ReadLine();
 

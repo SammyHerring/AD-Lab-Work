@@ -3,7 +3,7 @@
 //Author URI: http://sherring.me
 //UserID: sh1042
 //Created On: 8/3/2018 | 13:25
-//Last Updated On:  8/3/2018 | 15:13
+//Last Updated On:  8/3/2018 | 15:35
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,17 +12,21 @@ using System.Threading.Tasks;
 
 namespace Lab_6___Exercise_3_Method_Prog
 {
+
     class Program
     {
         static void Main(string[] args)
         {
             string destination = "";
-            while (destination == "")
+            Console.WriteLine("Enter requested destination: ");
+            destination = Console.ReadLine();
+            while (!ValidatDestination(destination)
             {
                 Console.WriteLine("Enter requested destination: ");
                 destination = Console.ReadLine();
+
             }
-            Console.WriteLine("Ticket Cost ({0}): {1:C2}", FirstCharToUpper(destination), ticketPriceReturn(ref destination));
+            Console.WriteLine("Ticket Cost ({0}): {1:C2}", FirstCharToUpper(destination), ticketPriceReturn( destination));
             Console.WriteLine(destination); //Bug with Destination Procedure, as ticketPriceReturn is called after statement
             Console.ReadLine();
         }
@@ -44,18 +48,14 @@ namespace Lab_6___Exercise_3_Method_Prog
                     ticketPrice = 39.90m;
                     break;
                 default:
-                    destination = "";
-                    while (destination == "")
-                    {
-                        Console.WriteLine("Enter requested destination: ");
-                        destination = Console.ReadLine();
-                        destinationChar = destination.Substring(0, 1).ToLower();
-                    }
-
-                    ticketPrice = ticketPriceReturn(ref destination);
-                    break;
+                    throw new InvalidDestinationException();
             }
             return ticketPrice;
+        }
+
+        static void validateDestination()
+        {
+
         }
 
         public static string FirstCharToUpper(string input)
